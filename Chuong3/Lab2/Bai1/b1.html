@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <br>
+    <div>
+        <select onchange=choiceAnh(this.value) name="select" id="select">
+            <option value="anh1" class="anh">anh 1</option>
+            <option value="anh2" class="anh">anh 2</option>
+            <option value="anh3" class="anh">anh 3</option>
+            <option value="anh4" class="anh">anh 4</option>
+        </select>
+        <br>
+        <br>
+        <div>
+            <img id="hoa" src="images/anh1.jpg" height="400" width="600" /><br />
+
+        </div>
+    </div>
+    </center>
+
+</body>
+    <script>
+        var anhAr = new Array(4);
+        function loadAnh(){
+            for(var i = 0; i < 3; i++){
+                anhAr[i] = new Image();
+                anhAr[i].src = "images/anh" + i + ".jpg";
+            }
+        }
+        function choiceAnh(value){
+            document.getElementById("hoa").setAttribute('src',`images/${value}.jpg`);
+        }
+        
+    </script>
+</html>

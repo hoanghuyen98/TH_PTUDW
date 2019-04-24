@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="loadAnh();">
+    <center>
+        <br>
+        <br>
+        <img id="hoa" src="anh0.jpg" height="400" width="600" />
+        <br />
+        <br>
+        <input type="button" id="b1" value="Play" onclick="play();" />
+    
+        <input type="button" id="b2" value="Stop" onclick="stop();" />
+    </center>
+
+</body>
+<script>
+    var anhAr = new Array(5); var currentIndex = 0;
+    var timeOut;
+    function loadAnh() {
+        for (var i = 0; i < anhAr.length; i++) {
+            anhAr[i] = new Image(); anhAr[i].src = "images/anh" + i + ".jpg";
+        }
+        runImage()
+
+    }
+    function runImage() {
+        if (currentIndex < anhAr.length - 1) {
+            document.getElementById("b1").disabled = false;
+            document.getElementById("hoa").src = anhAr[currentIndex].src;
+            currentIndex++;
+        }
+        else {
+            currentIndex = 0;
+        };
+        timeOut = setTimeout(function () {
+            runImage()
+        }, 1000);
+    }
+    function play() {
+        runImage();
+    }
+    function stop() {
+        clearTimeout(timeOut);
+    }
+</script>
+</html>
