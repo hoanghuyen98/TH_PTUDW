@@ -1,0 +1,150 @@
+<html>
+
+<!--
+/*
+     This script downloaded from www.JavaScriptBank.com
+     Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
+*/
+-->
+
+<head>
+	<title>Cool Analog Clock with Raphael by Amazing Styles</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="http://www.javascriptbank.com" />
+	<meta name="distribution" content="Global" />
+	<meta name="copyright" content="JavaScriptBank.com" />
+	<meta name="robots" content="follow,index" />
+	<link href="http://www.javascriptbank.com/templates/jsb.V8/images/favicon.ico" rel="shortcut icon" />
+	<style type="text/css">
+	.jsbank_sample_cont {margin: 20px; padding: 20px; text-align: left;}
+	.jsbank_sample_tit {font-weight: bold; margin-bottom: 10px; padding: 5px; width: auto; background-color: #c0c0c0; border: 5px solid #a0a0a0; color: black; text-align: center;}
+	.jsbank_copy_right {text-decoration: none;}
+	.jsbank_link {text-decoration: none; color: #000;}
+	pre, .codehighlight {background-color: #EFEFEF; font-size: 13px; width: 98%; border: 1px dashed gray; padding: 5px;}
+	</style>
+</head>
+
+<body>
+<center>
+<fieldset class="jsbank_sample_cont">
+	<legend class="jsbank_sample_tit" align=center>Sampled by &copy; <a href="http://www.javascriptbank.com" class="jsbank_copy_right">JavaScriptBank.com</a></legend>
+<!------------ Start jsB@nk's Codes ------------>
+<style type="text/css">
+/*
+     This script downloaded from www.JavaScriptBank.com
+     Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
+*/
+
+#container { float: left; position: relative; width: 100%; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; margin: 10px 0px;}
+#clock { float:left; width: 420px; height: 500px; }
+#dial { float: left; width: 420px; height:auto; border-left: 1px solid #dddddd; }
+#option { float:left; width:100%; height:100px; padding-left: 5px; }
+.image { float: left; width: 100px; height:100px; margin: 0px 0px 5px 5px; cursor:pointer;  }
+.image img { width: 100px; height: 100px; }
+
+#hand { float:left; width: 50%; height:auto;}
+.field { float:left; width: 50px; text-align:center; margin-left:10px; }
+#hand input { border: 1px solid #666666; height: 50px; width: 50px; cursor:pointer; }
+
+</style>
+
+<script type="text/javascript" src="raphael-min.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jscolor.js"></script>
+<script type="text/javascript">
+/*
+     This script downloaded from www.JavaScriptBank.com
+     Come to view and download over 2000+ free javascript at www.JavaScriptBank.com
+*/
+
+var canvas, c, bg, t, h, m, s;
+
+function start(){
+	canvas = Raphael( 10, 100, 400, 400);
+	bg = canvas.image("images/clock8.jpg", 0, 0, 400, 400);
+	// for hours
+	h = canvas.path("M200 200L200 100");
+	h.attr({stroke: "#0000ff", "stroke-width": 6 });
+	// for mins 
+	m = canvas.path("M200 200L200 70");
+	m.attr({ stroke: "#00ff00", "stroke-width": 4 });
+	// for seconds
+	s = canvas.path("M200 230L200 50");
+	s.attr({ stroke: "#ff0000", "stroke-width": 2 });
+
+	c = canvas.circle(200, 200, 5);
+	c.attr("fill", "#000000");
+	
+	setInterval("moveSec()",1000);
+}
+
+function moveSec()
+{
+	var date = new Date();
+	var sec = date.getSeconds();
+	s.rotate(6*sec, 200, 200);
+	var mins = date.getMinutes();
+	m.rotate(6*mins, 200, 200);
+	var hrs = date.getHours();
+	h.rotate(30*hrs+(mins/3), 200, 200);
+	//c.scale(sec/3, sec/3);
+}
+
+$(function(){
+
+	start();
+	$("img").click(function(){
+		bg.attr({src: $(this).attr("src")});
+	});
+	$("#hour").change(function(){
+		h.attr({stroke: $(this).val()});
+	});
+	$("#mins").change(function(){
+		m.attr({stroke: $(this).val()});
+	});
+	$("#secs").change(function(){
+		s.attr({stroke: $(this).val()});
+	});
+
+});
+
+</script>
+
+<div id="container">
+
+<div id="clock"></div>
+
+<div id="dial">
+	<div id="options">
+		<h3>Change Style for the Clock</h3>
+		<div id="hand">
+			<div class="field"><label>Hour Hand</label><input style="background-color: rgb(0, 0, 255); color: rgb(255, 255, 255);" autocomplete="off" class="color {hash:true,caps:true}" id="hour" value="#0000ff" type="text"></div>
+			<div class="field"><label>Minute Hand</label><input style="background-color: rgb(0, 255, 0); color: rgb(0, 0, 0);" autocomplete="off" class="color {hash:true,caps:true}" id="mins" value="00ff00" type="text"></div>
+			<div class="field"><label>Second Hand</label><input style="background-color: rgb(255, 0, 0); color: rgb(255, 255, 255);" autocomplete="off" class="color {hash:true,caps:true}" id="secs" value="ff0000" type="text"></div>
+		</div>
+	</div>
+	<div class="image"><img src="clock2.jpg" border="none"></div>
+	<div class="image"><img src="clock3.jpg" border="none"></div>
+	<div class="image"><img src="clock4.gif" border="none"></div>
+	<div class="image"><img src="clock5.jpg" border="none"></div>
+	<div class="image"><img src="clock6.jpg" border="none"></div>
+	<div class="image"><img src="clock7.jpg" border="none"></div>
+	<div class="image"><img src="clock8.jpg" border="none"></div>
+	<div class="image"><img src="clock9.jpg" border="none"></div>
+	<div class="image"><img src="clock10.gif" border="none"></div>
+	<div class="image"><img src="clock11.jpg" border="none"></div>
+	<div class="image"><img src="clock12.jpg" border="none"></div>
+	<div class="image"><img src="clock13.jpg" border="none"></div>
+	<div class="image"><img src="clock14.png" border="none"></div>
+	<div class="image"><img src="clock15.jpg" border="none"></div>
+</div>
+
+</div>
+<!------------ End jsB@nk's Codes   ------------>
+</fieldset>
+<br />
+<code><a href="http://www.javascriptbank.com/javascript/" class="jsbank_link">2000+ free JavaScripts</a><br />
+at <a href="http://www.javascriptbank.com">www.JavaScriptBank.com</a></code>
+</center>
+</body>
+</html>

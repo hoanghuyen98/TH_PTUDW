@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+        function check(pt){
+            x = document.forms[0].num1.value;
+            y = document.forms[0].num2.value;
+            x = parseInt(x);
+            y = parseInt(y);
+            switch(pt){
+                case "+":
+                    document.forms[0].answer.value = x + y;
+                    break;
+                case "-":
+                    document.forms[0].answer.value = x - y;
+                    break
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="">
+        <center>
+            <h1>Simple Calculator</h1>
+            <input type="text" name="num1" size="3" value="10"> &nbsp
+            <input type="button"name="c" onclick="check(this.value)" value="+">
+            <input type="button"name="t" onclick="check(this.value)" value="+">
+            <input type="text" name="num2" size=3 value=2>&nbsp
+            <input type="text" name="answer" size=5>
+        </center>
+    </form>
+</body>
+</html>
