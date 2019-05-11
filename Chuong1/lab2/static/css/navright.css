@@ -1,0 +1,40 @@
+.top{
+    background-color: #285d98;
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.top button{
+    border-radius: 10px;
+    margin-top:5px;
+    background-color: orange;
+    color: black;
+    padding:3px 3px;
+    font-weight: 600
+}
+.content-right{
+    margin-top: 10px;
+    margin-right: 5px
+
+}
+.content-right .title{
+    color:white;
+    background-color: #29b1e5;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+}
+.content-right .title h3{
+    font-size: 15px !important;
+}
+.content-right .content-right-children{
+    background-color: white;
+    padding-top: 10px;
+}
+
+.content-right .content-right-children .content-detail{
+    display: flex;
+    margin-bottom: 10px;
+}

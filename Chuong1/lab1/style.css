@@ -1,0 +1,44 @@
+.bg {
+    margin-top: -10px;
+    margin-left: 150px;
+    background: rgb(192, 236, 241);
+    width: 70%;
+    height: 270px;
+}
+.text-center{
+    text-align: center;
+}
+.pond {
+    display: flex;
+    justify-content: center;
+}
+.center {
+    margin-left: 150px;
+}
+.bd {
+    padding-top: 5px; 
+}
+.center-2{
+    margin-left: 138px
+}
+.bg-2{
+    margin-top: 50px;
+    margin-left: 150px;
+    background: rgb(192, 236, 241);
+    width: 70%;
+    height: 160px;
+}
+.center-bt{
+    margin-left: 100px;
+}
+.mr {
+    margin-right: 10px;
+    margin-left: 65px;
+    /* margin-top: 20px; */
+}
+.bg-3{
+    margin-top: 20px;
+    background-color: rgb(192, 236, 241);
+    width: 100%;
+    height: 26px;
+}

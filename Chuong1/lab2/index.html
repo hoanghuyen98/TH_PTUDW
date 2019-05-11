@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./static/css/header.css">
+    <link rel="stylesheet" href="./static/css/search.css">
+    <link rel="stylesheet" href="./static/css/navleft.css">
+    <title>Web 2</title>
+</head>
+
+<body>
+    <div style="display: flex;margin: 0 10%;background-color: white;display:flex; flex-direction: column;">
+        <div include-html="./template/header.html">
+
+        </div>
+        <div include-html="./template/search.html">
+        
+        </div>
+        <div style="margin-top: 10px;display:flex">
+            <div include-html="./template/navleft.html" style="width: 20%;">
+
+            </div>
+            <div id="content-page" include-html="./component/home/home.html" style="width: 80%; margin-left: 10px;display: flex;">
+
+            </div>
+            
+        </div>
+        <div include-html="./template/footer.html">
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+
+    <script>
+        includeHTML()
+    </script>
+</body>
+
+</html>
