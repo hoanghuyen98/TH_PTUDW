@@ -22,10 +22,9 @@
         <img src="images/bacho.jpg" alt="" width="100%" height="200px">
         <div>
             <ul>
-                <li><a href="?page=home">Home</a></li>
+                <li><a href="?page=upload">Uploads</a></li>
                 <li><a href="?page=ar1chieu">Ar 1 chieu</a></li>
-                <li><a href="?page=matrix">Mattix</a></li>
-                <li><a href="?page=asscociate">AssociateArr</a></li>								
+                <li><a href="?page=matrix">Matrix</a></li>
             </ul>
         </div>
         <table border="1" style="border:double 1px black"  width="100%" height="350" >
@@ -38,13 +37,13 @@
                <td colspan="4">
                     <?php
                         switch($page){
-                            case "contact": include_once("pages/ar1Chieu.php");
+                            case "matrix": include_once("pages/matrix.php");
                             break;
-                            case "register": include_once("pages/matrix.php");
+                            case "ar1chieu": include_once("pages/ar1Chieu.php");
                             break;
-                            case "registerprocess": require_once("pages/asscociateArrayProcess.php");
+                            case "registerprocess": require_once("pages/registerprocess.php");
                             break;
-                            case "home": include_once("pages/home.php");
+                            case "upload": include_once("pages/upload.php");
                             break;
                             default: echo "<h2 align='center'>Content is here</h2>";
                         }
